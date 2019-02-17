@@ -8,15 +8,16 @@ Code is provided for
 
 	+) AMA-SGD:  an implementation employing stochastic gradient descent (SGD)
 		      	as described in the paper:
-   		      	Johannes Burge & Priyank Jaini (submitted)
+   		      	Johannes Burge & Priyank Jaini (2017)
 	    	      	“Accuracy Maximization Analysis for Sensory-Perceptual Tasks: 
 		      	Computational Improvements, Priors, and Coding Advantages for Scaled Additive Noise”
+			PLoS Computational Biology, 13(2): e1005281. doi:10.1371/journal.pcbi.1005281
 
 	+) AMA-Gauss: an implementation employing the assumption that the class-conditional distributions are 
 		      	 Gaussian distributed as described in the paper:
-		      	 Priyank Jaini & Johannes Burge (submitted)
-		      	 “Accuracy Maximization Analysis with Class-Conditional Gaussian distributions: 
-		      	 Linking Normative Models to Energy Models and Methods for Neural Systems Identification” 
+		      	 Priyank Jaini & Johannes Burge (2017)
+		      	 “Linking normative models of natural tasks with descriptive models of neural response." 
+			 Journal of Vision, 17(12):16, 1-26 
 
 	+) AMA:       the original method as described in the paper:
 		      	 Wilson S. Geisler, Jiri Najemnik, Almon D. Ing (2009)
@@ -43,6 +44,7 @@ The repository also contains training sets of natural stimuli for two visual tas
 				Nature Communications, 6:7900, doi:10.1038/ncomms8900				
 
 	Please cite the appropriate work if you use this data in your research.
+	
 =======================
 = System Requirements =
 =======================
