@@ -8,8 +8,8 @@ void mexFunction (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
         mexErrMsgTxt ("AMAengine: WARNING! wrong number of inputs");
 
     // GET NOISY FILTER RESPONSE, R (1st RH INPUT)
-    const int *dims = mxGetDimensions (prhs[0]);   // get dimensions
-    int nStm = dims[0];                            // R is     [ nStm x q ]
+    const mwSize *dims = mxGetDimensions (prhs[0]);   // get dimensions
+    mwSize nStm = dims[0];                            // R is     [ nStm x q ]
     int q = dims[1];
 	double *R = mxGetPr (prhs[0]);                 // get pointer to elements
     
@@ -38,13 +38,13 @@ void mexFunction (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	double *ctgInd = mxGetPr (prhs[3]);           //  pointer to elements
 
     // ALLOCATE MEMORY FOR pp OUTPUT: nStm x 1 MATRIX OF POSTERIOR PROB OF CORRECT CTG
-    int output1dims[2] = { nStm, 1 };
+    mwSize output1dims[2] = { nStm, 1 };
     plhs[0] = mxCreateNumericArray (2, output1dims, mxDOUBLE_CLASS, mxREAL);
     // save address of allocated memory into the return value
 	double *pp = mxGetPr (plhs[0]);
     
     // DETERMINE NUMBER OF CATEGORIES
-    const int nCtg = *std::max_element (&ctgInd[0], &ctgInd[0] + nStm);
+    const mwSize nCtg = *std::max_element (&ctgInd[0], &ctgInd[0] + nStm);
     
     ///////////////////////////////////////
     // CHECK IF ctgInd IS OF TYPE SINGLE //
@@ -58,7 +58,7 @@ void mexFunction (int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     }
     
     // ALLOCATE MEMORY FOR ppAll OUTPUT: nStm x nCtg MATRIX OF POSTERIOR PROB ALL CTGs
-    int output2dims[2] = { nStm, nCtg };
+    mwSize output2dims[2] = { nStm, nCtg };
     plhs[1] = mxCreateNumericArray (2, output2dims, mxDOUBLE_CLASS, mxREAL);
     // save address of allocated memory into the return value
 	double *ppAll = mxGetPr (plhs[1]);
