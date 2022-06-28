@@ -65,14 +65,22 @@ Step 1: Save the code repository and add it to your matlab path
 
 Step 2: 	Compile the C files. Type the following commands at the prompt: 
 		
-		mex AMAengine.cpp
-		mex AMAengineGradientMAP.cpp
-		mex AMAengineGradientMSE.cpp
-
+		>> mex AMAengine.cpp
+		>> mex AMAengineGradientMAP.cpp
+		>> mex AMAengineGradientMSE.cpp
+		
+		NOTE! If, with one or all of these attempts to compile, the following error occurs:
+		"error: cannot convert ‘const mwSize*’ {aka ‘const long unsigned int*’} to ‘const int*’ in initialization"
+		please instead attempt to compile by typing at the prompt:
+		
+		>> mex AMAengine.cpp
+		>> mex AMAengineGradientMAP.cpp
+		>> mex AMAengineGradientMSE.cpp
+		
 Step 3: Load the desired dataset using the file loadAMAdata.m 
 
 	   	% LOAD DISPARITY DATA
-	    [s, ctgInd, X] = loadAMAdata(‘Disparity’)	
+	        [s, ctgInd, X] = loadAMAdata(‘Disparity’)	
 
 		% LOAD SPEED DATA
 		[s, ctgInd, X] = loadAMAdata(‘Speed’) 
