@@ -70,12 +70,12 @@ Step 2: 	Compile the C files. Type the following commands at the prompt:
 		>> mex AMAengineGradientMSE.cpp
 		
 		NOTE! If, with one or all of these attempts to compile, the following error occurs:
-		"error: cannot convert ‘const mwSize*’ {aka ‘const long unsigned int*’} to ‘const int*’ in initialization"
-		please instead attempt to compile by typing at the prompt:
+		"error: cannot convert ‘const mwSize*’ {aka ‘const long unsigned int*’} to ‘const int*’ 
+		in initialization" please instead attempt to compile by typing at the prompt:
 		
-		>> mex AMAengine.cpp
-		>> mex AMAengineGradientMAP.cpp
-		>> mex AMAengineGradientMSE.cpp
+		>> mex -compatibleArrayDims AMAengine.cpp
+		>> mex -compatibleArrayDims AMAengineGradientMAP.cpp
+		>> mex -compatibleArrayDims AMAengineGradientMSE.cpp
 		
 Step 3: Load the desired dataset using the file loadAMAdata.m 
 
